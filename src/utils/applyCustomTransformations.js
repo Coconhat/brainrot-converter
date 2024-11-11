@@ -81,6 +81,13 @@ export const applyCustomTransformations = (word) => {
   if (lowerWord === "good" || lowerWord === "happy") {
     return "bussin";
   }
+  if (
+    lowerWord === "party" ||
+    lowerWord === "celebrate" ||
+    lowerWord === "event"
+  ) {
+    return "diddy party";
+  }
 
   if (
     lowerWord === "girl" ||
@@ -96,6 +103,7 @@ export const applyCustomTransformations = (word) => {
   if (demonstrativePronouns.includes(lowerWord)) {
     return `${word} goofy`;
   }
+
   if (cap.includes(lowerWord)) {
     return `${Math.random() < 0.5 ? "cap" : "capping"}`;
   }
@@ -164,9 +172,9 @@ export const applyCustomTransformations = (word) => {
     return "gyatt";
   }
   if (toBeVerbs.includes(word)) {
-    return `${word} ${
-      Math.random() < 0.33 ? "on god" : Math.random() < 0.5 ? "edging" : ""
-    }`;
+    const suffix =
+      Math.random() < 0.33 ? "on god" : Math.random() < 0.5 ? "edging" : "";
+    return `${word}${suffix ? " " + suffix : ""}`;
   }
 
   return word;

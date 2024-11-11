@@ -59,26 +59,27 @@ const BrainrotTranslator = () => {
   const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
 
-    if (word === "give" && nextWord === "up") {
+    if (
+      (word === "give" && nextWord === "up") ||
+      (word === "let" && nextWord === "go")
+    ) {
       return "put the fries in the bag";
     }
-    if (word === "let" && nextWord === "go") {
-      return "put the fries in the bag";
-    }
+
     if (word === "how" && nextWord === "are") {
       return "how the rizz";
     }
-    if (word === "good" && nextWord === "morning") {
+    if (
+      word === "good" &&
+      (nextWord === "morning" ||
+        nextWord === "afternoon" ||
+        nextWord === "evening")
+    ) {
       return "good morning the weather outside is rizzy";
     }
-    if (word === "good" && nextWord === "afternoon") {
-      return "good morning the weather outside is rizzy";
-    }
-    if (word === "good" && nextWord === "evening") {
-      return "good morning the weather outside is rizzy";
-    }
+
     if (memeTerms.prepositions.includes(word) && nextWord) {
-      return `${word} ${nextWord} kai cenat`;
+      return `${word} ${nextWord} ${Math.random() < 0.5 ? " kai cenat" : ""}`;
     }
 
     word = applyCustomTransformations(word);
@@ -93,7 +94,7 @@ const BrainrotTranslator = () => {
   };
 
   const applyMemeTermReplacements = (word) => {
-    if (Math.random() < 0.05) {
+    if (Math.random() < 0.02) {
       let category;
       do {
         category =
