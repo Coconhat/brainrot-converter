@@ -69,7 +69,10 @@ export const applyCustomTransformations = (word) => {
     return `${word} ${Math.random() < 0.5 ? "winter arc" : "ohio"}`;
   }
   if (lowerWord === "with") {
-    return `${word} german stare`;
+    return `${word} ${Math.random() < 0.5 ? "german stare" : ""}`;
+  }
+  if (lowerWord === "is") {
+    return `${word} ${Math.random() < 0.5 ? "skibidi" : ""}`;
   }
 
   if (lowerWord === "got" || lowerWord === "get" || lowerWord === "ass") {
@@ -101,7 +104,7 @@ export const applyCustomTransformations = (word) => {
     return `${word}${Math.random() < 0.5 ? " bussin" : ""}`;
   }
   if (demonstrativePronouns.includes(lowerWord)) {
-    return `${word} goofy`;
+    return `${word}${Math.random() < 0.5 ? " goofy" : ""}`;
   }
 
   if (cap.includes(lowerWord)) {

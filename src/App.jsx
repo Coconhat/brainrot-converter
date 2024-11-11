@@ -151,7 +151,7 @@ const BrainrotTranslator = () => {
   function randomizeSentence() {
     for (let i = sentences.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [sentences[i], sentences[j]] = [sentences[j], sentences[i]]; // Swap elements
+      [sentences[i], sentences[j]] = [sentences[j], sentences[i]];
     }
 
     const randomSentence = sentences[0];
@@ -169,7 +169,12 @@ const BrainrotTranslator = () => {
         style={{ backgroundImage: `url(${grainImage})`, zIndex: -10 }}
       ></div>
       <div className="font-bold text-xl text-white text-center mt-4 mb-3">
-        Brainrot Translator
+        <span>
+          <h4>Brainrot Translator</h4>
+        </span>
+        <p className="text-sm font-normal mt-2">
+          This program turns normal text into brain rot, write something!
+        </p>
       </div>
 
       <div className="space-y-4 flex-grow">
