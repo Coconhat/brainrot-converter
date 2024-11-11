@@ -1,24 +1,9 @@
 import React, { useState } from "react";
 import grainImage from "./assets/grain.jpg";
 import Footer from "./component/Footer";
-import {
-  firstWord,
-  bad,
-  looksmaxing,
-  sigma,
-  fanumTax,
-  sus,
-  negativeAura,
-  wAura,
-  cap,
-  yap,
-  demonstrativePronouns,
-  giveUp,
-  dumb,
-  indefinitePronouns,
-  levelUp,
-} from "./data/synonyms";
+import { firstWord } from "./data/synonyms";
 import { sentences } from "./data/randomizeSentence";
+import { applyCustomTransformations } from "./utils/applyCustomTransformations";
 
 const BrainrotTranslator = () => {
   const [input, setInput] = useState("");
@@ -56,16 +41,20 @@ const BrainrotTranslator = () => {
       "hawk TUAH!",
       "let him cook",
     ],
+    prepositions: [
+      "in",
+      "on",
+      "at",
+      "by",
+      "under",
+      "over",
+      "beside",
+      "among",
+      "between",
+    ],
   };
 
-  const suffixes = [
-    "deadass",
-    "ong",
-    "bussin",
-    "fr",
-    "krazy",
-    "still water",
-  ];
+  const suffixes = ["deadass", "bussin", "fr", "krazy", "in still water"];
 
   const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
@@ -88,6 +77,9 @@ const BrainrotTranslator = () => {
     if (word === "good" && nextWord === "evening") {
       return "good morning the weather outside is rizzy";
     }
+    if (memeTerms.prepositions.includes(word) && nextWord) {
+      return `${word} ${nextWord} kai cenat`;
+    }
 
     word = applyCustomTransformations(word);
     word = applyMemeTermReplacements(word, lastTransformedWord);
@@ -100,81 +92,8 @@ const BrainrotTranslator = () => {
     return word;
   };
 
-  const applyCustomTransformations = (word) => {
-    const lowerWord = word.toLowerCase();
-
-    if (lowerWord === "no") {
-      return `${word} ${Math.random() < 0.5 ? "naw" : "naur"}`;
-    }
-    if (lowerWord === "yes") {
-      return `${word} ${Math.random() < 0.5 ? "fr" : "yass queen"}`;
-    }
-    if (lowerWord === "in") {
-      return `${word} ${Math.random() < 0.5 ? "winter arc" : "ohio"}`;
-    }
-    if (lowerWord === "with") {
-      return `${word} ${
-        Math.random() < 0.5 ? "german stare" : "balkan breakfast"
-      }`;
-    }
-    if (lowerWord === "got" || lowerWord === "get") {
-      return "gyat";
-    }
-    if (lowerWord === "to" || lowerWord === "is" || lowerWord === "a") {
-      return `${word}${Math.random() < 0.5 ? " bussin" : ""}`;
-    }
-    if (demonstrativePronouns.includes(lowerWord)) {
-      return `${word} goofy`;
-    }
-    if (cap.includes(lowerWord)) {
-      return `${Math.random() < 0.5 ? "cap" : "capping"}`;
-    }
-    if (yap.includes(lowerWord)) {
-      return "yap";
-    }
-    if (giveUp.includes(lowerWord)) {
-      return "put the fries in the bag";
-    }
-    if (dumb.includes(lowerWord)) {
-      return `${Math.random() < 0.5 ? "skibidi" : "brainrotted"}`;
-    }
-
-    if (memeTerms.slang.includes(word)) {
-      return word + " no cap";
-    }
-    if (bad.includes(word)) {
-      return `${Math.random() < 0.5 ? "dogwater" : "cooked"}`;
-    }
-    if (looksmaxing.includes(word)) {
-      return "looksmaxing";
-    }
-    if (sigma.includes(word)) {
-      return "sigma";
-    }
-    if (fanumTax.includes(word)) {
-      return "fanum tax";
-    }
-    if (sus.includes(word)) {
-      return `${Math.random() < 0.5 ? "sus" : "ohio"}`;
-    }
-    if (negativeAura.includes(word)) {
-      return "negative aura";
-    }
-    if (wAura.includes(word)) {
-      return "W aura";
-    }
-    if (indefinitePronouns.includes(word)) {
-      return "chat";
-    }
-    if (levelUp.includes(word)) {
-      return "level-up";
-    }
-
-    return word;
-  };
-
   const applyMemeTermReplacements = (word) => {
-    if (Math.random() < 0.07) {
+    if (Math.random() < 0.05) {
       let category;
       do {
         category =
@@ -191,7 +110,7 @@ const BrainrotTranslator = () => {
   };
 
   const applyRandomSuffix = (word) => {
-    if (Math.random() < 0.11) {
+    if (Math.random() < 0.1) {
       return `${word} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`;
     }
     return word;
@@ -266,14 +185,14 @@ const BrainrotTranslator = () => {
           <button
             onClick={handleTranslate}
             className="bg-white text-black py-3 px-6 text-lg font-semibold rounded-lg flex-grow hover:bg-gray-300 transition-colors"
-            style={{ flexGrow: 2 }} 
+            style={{ flexGrow: 2 }}
           >
             Transform
           </button>
           <button
             onClick={randomizeSentence}
             className="bg-white text-black py-3 px-6 text-lg font-semibold rounded-lg flex-grow hover:bg-gray-300 transition-colors"
-            style={{ flexGrow: 1 }} 
+            style={{ flexGrow: 1 }}
           >
             Randomize
           </button>
