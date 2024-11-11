@@ -43,13 +43,11 @@ const BrainrotTranslator = () => {
 
   const suffixes = [
     "no cap",
-    "respectfully",
     "ngl",
     "deadass",
     "ong",
     "bussin",
     "fr",
-    "morbin time",
     "krazy ah",
     "L",
   ];
@@ -86,11 +84,19 @@ const BrainrotTranslator = () => {
   ];
   const indefinitePronouns = ["everyone", "someone", "anyone", "everybody"];
 
+  const firstWord = ["Yo", "Bro", "my king", "what the sigma"];
+
   const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
 
     if (word === "give" && nextWord === "up") {
       return "put the fries in the bag";
+    }
+    if (word === "let" && nextWord === "go") {
+      return "put the fries in the bag";
+    }
+    if (word === "how" && nextWord === "are") {
+      return "how the rizz";
     }
 
     word = applyCustomTransformations(word);
@@ -136,12 +142,15 @@ const BrainrotTranslator = () => {
     if (indefinitePronouns.includes(lowerWord)) {
       return "chat";
     }
+    if (memeTerms.slang.includes(word)) {
+      return word + " no cap";
+    }
 
     return word;
   };
 
   const applyMemeTermReplacements = (word) => {
-    if (Math.random() < 0.1) {
+    if (Math.random() < 0.09) {
       let category;
       do {
         category =
@@ -167,6 +176,8 @@ const BrainrotTranslator = () => {
   const translateToBrainrot = (text) => {
     let words = text.split(" ");
     let lastTransformedWord = "";
+
+    // Transform each word
     const transformed = words.map((word, index) => {
       const nextWord = words[index + 1];
       const transformedWord = transformWords(
@@ -178,14 +189,16 @@ const BrainrotTranslator = () => {
       return transformedWord;
     });
 
-    // Add random phrases at the end
+    const randomFirstWord =
+      firstWord[Math.floor(Math.random() * firstWord.length)];
+
     if (Math.random() < 0.29) {
       const randomPhrase =
         memeTerms.phrases[Math.floor(Math.random() * memeTerms.phrases.length)];
-      transformed.push(`${randomPhrase}`);
+      transformed.push(randomPhrase);
     }
 
-    return transformed.join(" ");
+    return `${randomFirstWord} ${transformed.join(" ")}`;
   };
 
   const handleTranslate = () => {
