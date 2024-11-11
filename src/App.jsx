@@ -75,7 +75,7 @@ const BrainrotTranslator = () => {
       }
 
       // Random suffix additions
-      if (Math.random() < 0.13) {
+      if (Math.random() < 0.12) {
         word = `${word} ${
           suffixes[Math.floor(Math.random() * suffixes.length)]
         }`;
@@ -110,12 +110,9 @@ const BrainrotTranslator = () => {
           zIndex: -10,
         }}
       ></div>
-      <div className="absolute inset-0  border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5;"></div>
       <div className="font-bold text-xl text-white text-center">
         Brainrot Translator
       </div>
-      <div className="absolute inset-0  border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5;"></div>
-      <div className="absolute inset-0  border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5;"></div>
 
       <div className="space-y-4">
         <div className="space-y-2">
