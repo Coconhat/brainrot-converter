@@ -15,6 +15,7 @@ const BrainrotTranslator = () => {
       "only in ohio",
       "sussy imposter",
       "hawk TUAH! ",
+      "edge",
     ],
     exclamations: ["goofy ahh"],
     people: [
@@ -53,51 +54,80 @@ const BrainrotTranslator = () => {
     "krazy ah",
   ];
 
+  const lie = ["lie", "lying", "con", "Mislead ", "Deception "];
+  const demonstrativePronouns = ["this", "that", "there", "those"];
+  const talk = [
+    "speak",
+    "chat",
+    "communicate",
+    "discuss",
+    "inform",
+    "narrate",
+    "talk",
+    "talking",
+  ];
+
+  const transformWords = (word) => {
+    word = applyCustomTransformations(word);
+    word = applyMemeTermReplacements(word);
+    word = applyRandomSuffix(word);
+    return word;
+  };
+
+  const applyCustomTransformations = (word) => {
+    if (word.toLowerCase() === "in") {
+      return `${word} ${Math.random() < 0.5 ? "winter arc" : "still water"}`;
+    }
+    if (word.toLowerCase() === "with") {
+      return `${word} ${
+        Math.random() < 0.5 ? "german stare" : "balkan breakfast"
+      }`;
+    }
+    if (word.toLowerCase() === "got") {
+      return "gyat";
+    }
+    if (demonstrativePronouns.includes(word.toLowerCase())) {
+      return `${word} goofy ah`;
+    }
+    if (lie.includes(word.toLowerCase())) {
+      return `${Math.random() < 0.5 ? "cap" : "capping"}`;
+    }
+    if (talk.includes(word.toLowerCase())) {
+      return "yap";
+    }
+
+    return word;
+  };
+
+  const applyMemeTermReplacements = (word) => {
+    if (Math.random() < 0.1) {
+      let category;
+      do {
+        category =
+          Object.keys(memeTerms)[
+            Math.floor(Math.random() * Object.keys(memeTerms).length)
+          ];
+      } while (category === lastCategory && category === "people");
+
+      const terms = memeTerms[category];
+      word = terms[Math.floor(Math.random() * terms.length)];
+      setLastCategory(category);
+    }
+    return word;
+  };
+
+  const applyRandomSuffix = (word) => {
+    if (Math.random() < 0.12) {
+      return `${word} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`;
+    }
+    return word;
+  };
+
   const translateToBrainrot = (text) => {
     let words = text.split(" ");
+    const transformed = words.map((word) => transformWords(word));
 
-    // Apply brainrot transformations
-    const transformed = words.map((word, index) => {
-      if (word.toLowerCase() === "in") {
-        word = `${word} ${Math.random() < 0.5 ? "winter arc" : "still water"}`;
-      }
-      if (word.toLowerCase() === "with") {
-        word = `${word} ${
-          Math.random() < 0.5 ? "german stare" : "balkan breakfast"
-        }`;
-      }
-      if (word.toLowerCase() === "got") {
-        word = "gyat";
-      }
-
-      // Random word replacements
-      if (Math.random() < 0.1) {
-        let category;
-
-        do {
-          category =
-            Object.keys(memeTerms)[
-              Math.floor(Math.random() * Object.keys(memeTerms).length)
-            ];
-        } while (category === lastCategory && category === "people");
-
-        const terms = memeTerms[category];
-        word = terms[Math.floor(Math.random() * terms.length)];
-
-        setLastCategory(category);
-      }
-
-      // Random suffix additions
-      if (Math.random() < 0.12) {
-        word = `${word} ${
-          suffixes[Math.floor(Math.random() * suffixes.length)]
-        }`;
-      }
-
-      return word;
-    });
-
-    // Add random phrases at the end HAWK TUAH!!!
+    // Add random phrases at the end
     if (Math.random() < 0.29) {
       const randomPhrase =
         memeTerms.phrases[Math.floor(Math.random() * memeTerms.phrases.length)];
@@ -118,10 +148,7 @@ const BrainrotTranslator = () => {
     >
       <div
         className="absolute inset-0 -z-10 opacity-5"
-        style={{
-          backgroundImage: `url(${grainImage})`,
-          zIndex: -10,
-        }}
+        style={{ backgroundImage: `url(${grainImage})`, zIndex: -10 }}
       ></div>
       <div className="font-bold text-xl text-white text-center mt-4 mb-3">
         Brainrot Translator
