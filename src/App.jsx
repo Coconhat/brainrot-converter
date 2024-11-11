@@ -63,7 +63,7 @@ const BrainrotTranslator = () => {
     "ong",
     "bussin",
     "fr",
-    "krazy ah",
+    "krazy",
     "still water",
   ];
 
