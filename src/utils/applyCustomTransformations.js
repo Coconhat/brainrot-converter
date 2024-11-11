@@ -62,6 +62,9 @@ export const applyCustomTransformations = (word) => {
   if (lowerWord === "no") {
     return `${word} ${Math.random() < 0.5 ? "naw" : "naur"}`;
   }
+  if (lowerWord === "very") {
+    return `${word} ${Math.random() < 0.5 ? "skibidi ohio" : ""}`;
+  }
   if (lowerWord === "yes") {
     return `${word} ${Math.random() < 0.5 ? "fr" : "yass queen"}`;
   }
