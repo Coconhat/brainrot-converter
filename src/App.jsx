@@ -14,10 +14,10 @@ const BrainrotTranslator = () => {
       "rizz",
       "only in ohio",
       "sussy imposter",
-      "hawk TUAH! ",
+      "hawk TUAH!",
       "edge",
+      "W",
     ],
-    exclamations: ["goofy ahh"],
     people: [
       "duke dennis",
       "livvy dunne",
@@ -43,7 +43,6 @@ const BrainrotTranslator = () => {
 
   const suffixes = [
     "no cap",
-    "on god",
     "respectfully",
     "ngl",
     "deadass",
@@ -52,17 +51,19 @@ const BrainrotTranslator = () => {
     "fr",
     "morbin time",
     "krazy ah",
+    "L",
   ];
 
   const lie = ["lie", "lying", "con", "Mislead ", "Deception "];
   const demonstrativePronouns = ["this", "that", "there", "those"];
   const talk = [
     "speak",
+    "say",
+    "saying",
     "chat",
     "communicate",
     "discuss",
     "inform",
-    "narrate",
     "talk",
     "talking",
   ];
@@ -74,18 +75,36 @@ const BrainrotTranslator = () => {
     "give up",
     "let go",
   ];
-  const dumb = ["dumb", "slow", "dull", "ignorant", "idiot"];
+  const dumb = [
+    "dumb",
+    "slow",
+    "dull",
+    "ignorant",
+    "idiot",
+    "dumbass",
+    "stupid",
+  ];
+  const indefinitePronouns = ["everyone", "someone", "anyone", "everybody"];
 
-  const transformWords = (word) => {
+  const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
+
+    if (word === "give" && nextWord === "up") {
+      return "put the fries in the bag";
+    }
+
     word = applyCustomTransformations(word);
-    word = applyMemeTermReplacements(word);
+    word = applyMemeTermReplacements(word, lastTransformedWord);
     word = applyRandomSuffix(word);
+
+    if (word === lastTransformedWord) {
+      word = applyMemeTermReplacements(word, lastTransformedWord);
+    }
+
     return word;
   };
 
   const applyCustomTransformations = (word) => {
-    // Convert word to lowercase to handle case insensitivity
     const lowerWord = word.toLowerCase();
 
     if (lowerWord === "in") {
@@ -100,7 +119,7 @@ const BrainrotTranslator = () => {
       return "gyat";
     }
     if (demonstrativePronouns.includes(lowerWord)) {
-      return `${word} goofy ah`;
+      return `${word} goofy`;
     }
     if (lie.includes(lowerWord)) {
       return `${Math.random() < 0.5 ? "cap" : "capping"}`;
@@ -113,6 +132,9 @@ const BrainrotTranslator = () => {
     }
     if (dumb.includes(lowerWord)) {
       return "brainrot";
+    }
+    if (indefinitePronouns.includes(lowerWord)) {
+      return "chat";
     }
 
     return word;
@@ -144,7 +166,17 @@ const BrainrotTranslator = () => {
 
   const translateToBrainrot = (text) => {
     let words = text.split(" ");
-    const transformed = words.map((word) => transformWords(word));
+    let lastTransformedWord = "";
+    const transformed = words.map((word, index) => {
+      const nextWord = words[index + 1];
+      const transformedWord = transformWords(
+        word,
+        nextWord,
+        lastTransformedWord
+      );
+      lastTransformedWord = transformedWord;
+      return transformedWord;
+    });
 
     // Add random phrases at the end
     if (Math.random() < 0.29) {
