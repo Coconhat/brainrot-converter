@@ -51,7 +51,6 @@ const BrainrotTranslator = () => {
 
   const suffixes = [
     "no cap",
-    "ngl",
     "deadass",
     "ong",
     "bussin",
