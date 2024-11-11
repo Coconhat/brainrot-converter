@@ -56,7 +56,16 @@ const BrainrotTranslator = () => {
     let words = text.split(" ");
 
     // Apply brainrot transformations
-    const transformed = words.map((word) => {
+    const transformed = words.map((word, index) => {
+      if (word.toLowerCase() === "in") {
+        word = `${word} ${Math.random() < 0.5 ? "winter arc" : "still water"}`;
+      }
+      if (word.toLowerCase() === "with") {
+        word = `${word} ${
+          Math.random() < 0.5 ? "german stare" : "balkan breakfast"
+        }`;
+      }
+
       // Random word replacements
       if (Math.random() < 0.1) {
         let category;
