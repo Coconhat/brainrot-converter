@@ -4,6 +4,7 @@ import Footer from "./component/Footer";
 import { firstWord } from "./data/synonyms";
 import { sentences } from "./data/randomizeSentence";
 import { applyCustomTransformations } from "./utils/applyCustomTransformations";
+import Header from "./component/Header";
 
 const BrainrotTranslator = () => {
   const [input, setInput] = useState("");
@@ -168,14 +169,7 @@ const BrainrotTranslator = () => {
         className="absolute inset-0 -z-10 opacity-5"
         style={{ backgroundImage: `url(${grainImage})`, zIndex: -10 }}
       ></div>
-      <div className="font-bold text-xl text-white text-center mt-4 mb-3">
-        <span>
-          <h4>Brainrot Translator</h4>
-        </span>
-        <p className="text-sm font-normal mt-2">
-          This program turns normal text into brain rot, write something!
-        </p>
-      </div>
+      <Header />
 
       <div className="space-y-4 flex-grow">
         <div className="space-y-2">
