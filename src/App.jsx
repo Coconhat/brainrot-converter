@@ -18,6 +18,7 @@ import {
   indefinitePronouns,
   levelUp,
 } from "./data/synonyms";
+import { sentences } from "./data/randomizeSentence";
 
 const BrainrotTranslator = () => {
   const [input, setInput] = useState("");
@@ -121,7 +122,7 @@ const BrainrotTranslator = () => {
       return "gyat";
     }
     if (lowerWord === "to" || lowerWord === "is" || lowerWord === "a") {
-      return `${word} ${Math.random() < 0.5 ? "bussin" : ""}`;
+      return `${word}${Math.random() < 0.5 ? " bussin" : ""}`;
     }
     if (demonstrativePronouns.includes(lowerWord)) {
       return `${word} goofy`;
@@ -228,6 +229,16 @@ const BrainrotTranslator = () => {
   const handleTranslate = () => {
     setOutput(translateToBrainrot(input));
   };
+  function randomizeSentence() {
+    for (let i = sentences.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [sentences[i], sentences[j]] = [sentences[j], sentences[i]]; // Swap elements
+    }
+
+    const randomSentence = sentences[0];
+
+    setInput(randomSentence);
+  }
 
   return (
     <div
@@ -252,12 +263,22 @@ const BrainrotTranslator = () => {
           />
         </div>
 
-        <button
-          onClick={handleTranslate}
-          className="w-full bg-white text-black py-2 rounded-lg hover:bg-gray-300 transition-colors mt-3"
-        >
-          Transform
-        </button>
+        <div className="flex space-x-4 mt-3 w-full">
+          <button
+            onClick={handleTranslate}
+            className="bg-white text-black py-3 px-6 text-lg font-semibold rounded-lg flex-grow hover:bg-gray-300 transition-colors"
+            style={{ flexGrow: 2 }} 
+          >
+            Transform
+          </button>
+          <button
+            onClick={randomizeSentence}
+            className="bg-white text-black py-3 px-6 text-lg font-semibold rounded-lg flex-grow hover:bg-gray-300 transition-colors"
+            style={{ flexGrow: 1 }} 
+          >
+            Randomize
+          </button>
+        </div>
 
         <div className="space-y-2 mt-4">
           <div className="font-medium text-white">Brainrot Version:</div>
