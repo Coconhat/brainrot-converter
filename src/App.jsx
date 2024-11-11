@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import grainImage from "./assets/grain.jpg";
+import Footer from "./component/Footer";
 
 const BrainrotTranslator = () => {
   const [input, setInput] = useState("");
@@ -112,7 +113,7 @@ const BrainrotTranslator = () => {
 
   return (
     <div
-      className="w-full max-w-2xl mx-auto p-6 bg-#0C0C0C rounded-3xl shadow-lg relative z-10 overflow-hidden"
+      className="w-full max-w-2xl mx-auto p-6 bg-#0C0C0C rounded-3xl shadow-lg relative z-10 overflow-hidden flex flex-col min-h-screen"
       style={{ position: "relative" }}
     >
       <div
@@ -126,7 +127,7 @@ const BrainrotTranslator = () => {
         Brainrot Translator
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4 flex-grow">
         <div className="space-y-2">
           <textarea
             value={input}
@@ -149,6 +150,10 @@ const BrainrotTranslator = () => {
             {output}
           </div>
         </div>
+      </div>
+
+      <div>
+        <Footer />
       </div>
     </div>
   );
