@@ -66,8 +66,18 @@ const BrainrotTranslator = () => {
     "talk",
     "talking",
   ];
+  const giveUp = [
+    "quit",
+    "surrender",
+    "forfeit",
+    "resign",
+    "give up",
+    "let go",
+  ];
+  const dumb = ["dumb", "slow", "dull", "ignorant", "idiot"];
 
   const transformWords = (word) => {
+    word = word.toLowerCase();
     word = applyCustomTransformations(word);
     word = applyMemeTermReplacements(word);
     word = applyRandomSuffix(word);
@@ -75,25 +85,34 @@ const BrainrotTranslator = () => {
   };
 
   const applyCustomTransformations = (word) => {
-    if (word.toLowerCase() === "in") {
+    // Convert word to lowercase to handle case insensitivity
+    const lowerWord = word.toLowerCase();
+
+    if (lowerWord === "in") {
       return `${word} ${Math.random() < 0.5 ? "winter arc" : "still water"}`;
     }
-    if (word.toLowerCase() === "with") {
+    if (lowerWord === "with") {
       return `${word} ${
         Math.random() < 0.5 ? "german stare" : "balkan breakfast"
       }`;
     }
-    if (word.toLowerCase() === "got") {
+    if (lowerWord === "got") {
       return "gyat";
     }
-    if (demonstrativePronouns.includes(word.toLowerCase())) {
+    if (demonstrativePronouns.includes(lowerWord)) {
       return `${word} goofy ah`;
     }
-    if (lie.includes(word.toLowerCase())) {
+    if (lie.includes(lowerWord)) {
       return `${Math.random() < 0.5 ? "cap" : "capping"}`;
     }
-    if (talk.includes(word.toLowerCase())) {
+    if (talk.includes(lowerWord)) {
       return "yap";
+    }
+    if (giveUp.includes(lowerWord)) {
+      return "put the fries in the bag";
+    }
+    if (dumb.includes(lowerWord)) {
+      return "brainrot";
     }
 
     return word;
