@@ -1,6 +1,23 @@
 import React, { useState } from "react";
 import grainImage from "./assets/grain.jpg";
 import Footer from "./component/Footer";
+import {
+  firstWord,
+  bad,
+  looksmaxing,
+  sigma,
+  fanumTax,
+  sus,
+  negativeAura,
+  wAura,
+  cap,
+  yap,
+  demonstrativePronouns,
+  giveUp,
+  dumb,
+  indefinitePronouns,
+  levelUp,
+} from "./data/synonyms";
 
 const BrainrotTranslator = () => {
   const [input, setInput] = useState("");
@@ -13,11 +30,10 @@ const BrainrotTranslator = () => {
       "gyatt",
       "rizz",
       "only in ohio",
-      "sussy imposter",
       "hawk TUAH!",
       "edge",
-      "W",
       "mog",
+      "cook",
     ],
     people: [
       "duke dennis",
@@ -29,70 +45,27 @@ const BrainrotTranslator = () => {
       "john pork",
       "mrbeast ",
     ],
-    status: [
-      "sigma male",
-      "alpha male",
-      "mewwing",
-      "winter arc",
-      "MANGO",
-      "mog",
-    ],
-    slang: ["blud", "dawg", "bussing", "goated"],
+    status: ["alpha male", "mewwing", "winter arc", "MANGO"],
+    slang: ["edging streak", "bussing", "goated"],
     phrases: [
       "ambatukam",
       "hitting the griddy",
       "the ocky way",
-      "fanum tax",
       "no edging",
-      "in ohio",
       "hawk TUAH!",
+      "let him cook",
     ],
   };
 
   const suffixes = [
-    "no cap",
     "deadass",
     "ong",
     "bussin",
     "fr",
     "krazy ah",
     "L",
+    "still water",
   ];
-
-  const lie = ["lie", "lying", "con", "Mislead ", "Deception "];
-  const demonstrativePronouns = ["this", "that", "there", "those"];
-  const talk = [
-    "speak",
-    "say",
-    "saying",
-    "chat",
-    "communicate",
-    "discuss",
-    "inform",
-    "talk",
-    "talking",
-  ];
-  const giveUp = [
-    "quit",
-    "surrender",
-    "forfeit",
-    "resign",
-    "give up",
-    "let go",
-  ];
-  const dumb = [
-    "dumb",
-    "slow",
-    "dull",
-    "ignorant",
-    "idiot",
-    "dumbass",
-    "stupid",
-  ];
-  const indefinitePronouns = ["everyone", "someone", "anyone", "everybody"];
-
-  const firstWord = ["Yo", "Bro", "my king", "what the sigma"];
-  const bad = ["bad", "wrong", "poor", "lame", "awful"];
 
   const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
@@ -105,6 +78,15 @@ const BrainrotTranslator = () => {
     }
     if (word === "how" && nextWord === "are") {
       return "how the rizz";
+    }
+    if (word === "good" && nextWord === "morning") {
+      return "good morning the weather outside is rizzy";
+    }
+    if (word === "good" && nextWord === "afternoon") {
+      return "good morning the weather outside is rizzy";
+    }
+    if (word === "good" && nextWord === "evening") {
+      return "good morning the weather outside is rizzy";
     }
 
     word = applyCustomTransformations(word);
@@ -121,47 +103,78 @@ const BrainrotTranslator = () => {
   const applyCustomTransformations = (word) => {
     const lowerWord = word.toLowerCase();
 
+    if (lowerWord === "no") {
+      return `${word} ${Math.random() < 0.5 ? "naw" : "naur"}`;
+    }
+    if (lowerWord === "yes") {
+      return `${word} ${Math.random() < 0.5 ? "fr" : "yass queen"}`;
+    }
     if (lowerWord === "in") {
-      return `${word} ${Math.random() < 0.5 ? "winter arc" : "still water"}`;
+      return `${word} ${Math.random() < 0.5 ? "winter arc" : "ohio"}`;
     }
     if (lowerWord === "with") {
       return `${word} ${
         Math.random() < 0.5 ? "german stare" : "balkan breakfast"
       }`;
     }
-    if (lowerWord === "got") {
+    if (lowerWord === "got" || lowerWord === "get") {
       return "gyat";
+    }
+    if (lowerWord === "to" || lowerWord === "is" || lowerWord === "a") {
+      return `${word} ${Math.random() < 0.5 ? "bussin" : ""}`;
     }
     if (demonstrativePronouns.includes(lowerWord)) {
       return `${word} goofy`;
     }
-    if (lie.includes(lowerWord)) {
+    if (cap.includes(lowerWord)) {
       return `${Math.random() < 0.5 ? "cap" : "capping"}`;
     }
-    if (talk.includes(lowerWord)) {
+    if (yap.includes(lowerWord)) {
       return "yap";
     }
     if (giveUp.includes(lowerWord)) {
       return "put the fries in the bag";
     }
     if (dumb.includes(lowerWord)) {
-      return "brainrot";
+      return `${Math.random() < 0.5 ? "skibidi" : "brainrotted"}`;
     }
-    if (indefinitePronouns.includes(lowerWord)) {
-      return "chat";
-    }
+
     if (memeTerms.slang.includes(word)) {
       return word + " no cap";
     }
     if (bad.includes(word)) {
-      return "dogwater";
+      return `${Math.random() < 0.5 ? "dogwater" : "cooked"}`;
+    }
+    if (looksmaxing.includes(word)) {
+      return "looksmaxing";
+    }
+    if (sigma.includes(word)) {
+      return "sigma";
+    }
+    if (fanumTax.includes(word)) {
+      return "fanum tax";
+    }
+    if (sus.includes(word)) {
+      return `${Math.random() < 0.5 ? "sus" : "ohio"}`;
+    }
+    if (negativeAura.includes(word)) {
+      return "negative aura";
+    }
+    if (wAura.includes(word)) {
+      return "W aura";
+    }
+    if (indefinitePronouns.includes(word)) {
+      return "chat";
+    }
+    if (levelUp.includes(word)) {
+      return "level-up";
     }
 
     return word;
   };
 
   const applyMemeTermReplacements = (word) => {
-    if (Math.random() < 0.09) {
+    if (Math.random() < 0.07) {
       let category;
       do {
         category =
@@ -178,7 +191,7 @@ const BrainrotTranslator = () => {
   };
 
   const applyRandomSuffix = (word) => {
-    if (Math.random() < 0.12) {
+    if (Math.random() < 0.11) {
       return `${word} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`;
     }
     return word;
