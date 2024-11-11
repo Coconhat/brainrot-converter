@@ -17,6 +17,7 @@ const BrainrotTranslator = () => {
       "hawk TUAH!",
       "edge",
       "W",
+      "mog",
     ],
     people: [
       "duke dennis",
@@ -28,7 +29,14 @@ const BrainrotTranslator = () => {
       "john pork",
       "mrbeast ",
     ],
-    status: ["sigma male", "alpha male", "mewwing", "winter arc", "MANGO"],
+    status: [
+      "sigma male",
+      "alpha male",
+      "mewwing",
+      "winter arc",
+      "MANGO",
+      "mog",
+    ],
     slang: ["blud", "dawg", "bussing", "goated"],
     phrases: [
       "ambatukam",
@@ -85,6 +93,7 @@ const BrainrotTranslator = () => {
   const indefinitePronouns = ["everyone", "someone", "anyone", "everybody"];
 
   const firstWord = ["Yo", "Bro", "my king", "what the sigma"];
+  const bad = ["bad", "wrong", "poor", "lame", "awful"];
 
   const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
@@ -144,6 +153,9 @@ const BrainrotTranslator = () => {
     }
     if (memeTerms.slang.includes(word)) {
       return word + " no cap";
+    }
+    if (bad.includes(word)) {
+      return "dogwater";
     }
 
     return word;
