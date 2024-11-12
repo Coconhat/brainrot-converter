@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import grainImage from "./assets/grain.jpg";
 import Footer from "./component/Footer";
-import { firstWord } from "./data/synonyms";
 import { sentences } from "./data/randomizeSentence";
 import { applyCustomTransformations } from "./utils/applyCustomTransformations";
 import Header from "./component/Header";
@@ -61,7 +60,6 @@ const BrainrotTranslator = () => {
   const phrasesToTransform = {
     "give up": "put the fries in the bag",
     "how are you": "how the rizz are you",
-    "good morning": "good morning the weather outside is rizzy",
     "let's go": "let's roll out",
     "what's up": "sigma up",
     "see you later": "catch you on the skibidi side",
@@ -117,7 +115,7 @@ const BrainrotTranslator = () => {
     "what happened": "what's the rizz",
     "have a nice day": "keep it skibidi awesome",
     "sorry for being late": "lowkey sorry for the L",
-    "good morning": "good morning the weather outside is rizzy",
+    "good morning": "the weather outside is rizzy",
     "good afternoon": "the weather outside is rizzy",
     "good evening": "the weather outside is rizzy",
     "what the": "what the sigma",

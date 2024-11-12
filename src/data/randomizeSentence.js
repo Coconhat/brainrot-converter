@@ -1,8 +1,8 @@
 export const sentences = [
   "I need help choosing a gift for my friend. What do you think about the new restaurant in town? Give up trying to decide between the two places.",
-  "How are you handling your plans for the weekend? I don't know if we can make it to the concert in time. Let's go check the movie showtimes together.",
+  "How are you handling your plans for the weekend? I don't know if we can make it to the concert in time. Let's get john and check the movie showtimes together.",
   "What's up with the new cafe opening nearby? Take care when choosing the right dessert. Thank you for recommending this place to me.",
-  "Are you free to talk about the vacation plans? I'm tired after all the shopping. I love you guys for helping me pick the perfect outfit.",
+  "Are you free to talk about the vacation plans that we got I'm tired after all the shopping. I love you guys for helping me pick the perfect outfit.",
   "See you soon at the family gathering. What's wrong with the current route for the road trip? Be careful with the packing process.",
   "Let's have lunch together and discuss the trip. Can you help me understand these itinerary details? Take a break when you need to.",
   "This is cool how the event came together. What happened to our original plans? Have a nice day sightseeing.",
