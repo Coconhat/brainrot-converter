@@ -219,6 +219,9 @@ export const sigma = [
 ];
 
 export const winW = [
+  "nice",
+  "good",
+  "great",
   "delicious",
   "amazing",
   "awesome",
