@@ -1,5 +1,4 @@
 import {
-  firstWord,
   bad,
   looksmaxing,
   sigma,
@@ -177,6 +176,8 @@ export const applyCustomTransformations = (word) => {
   if (winW.includes(word)) {
     return `${Math.random() < 0.5 ? "W" : "goated"}`;
   }
+  console.log(winW.includes(word)); // Check if "nice" is in the array
+
   if (lLose.includes(word)) {
     return "L";
   }

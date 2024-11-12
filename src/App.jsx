@@ -120,6 +120,7 @@ const BrainrotTranslator = () => {
     "good afternoon": "the weather outside is rizzy",
     "good evening": "the weather outside is rizzy",
     "what the": "what the sigma",
+    "not cool": "not w",
     what: `${Math.random() < 0.3 ? "what the sigma" : ""}`,
   };
 
