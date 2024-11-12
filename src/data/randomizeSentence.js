@@ -7,7 +7,6 @@ export const sentences = [
   "I forgot my keys at home. I had to go back and get them. It was a little annoying.",
   "The movie was fantastic. I didn't expect it to be so good. I want to watch it again.",
   "We went hiking up the mountain. The view from the top was breathtaking. I took some great photos.",
-  "I need to buy groceries. The fridge is almost empty. I’m thinking of making a salad tonight.",
   "He studied all night for the exam. It was really difficult. He barely finished on time.",
   "I went to the beach with friends. The sand was warm and soft. We played volleyball all afternoon.",
   "The concert was amazing. The band played my favorite song. The crowd was hyped.",
@@ -30,5 +29,5 @@ export const sentences = [
   "The weather is getting colder. I might need to wear a good jacket soon. It's almost winter.",
   "I cleaned my car today. It looks brand new. I feel proud of how shiny it is.",
   "The party was a blast. We danced all night. I had so much fun.",
-  "I wanna go to the party with you. We can dance all night and all day."
+  "I wanna go to the party with you. We can dance all night and all day.",
 ];

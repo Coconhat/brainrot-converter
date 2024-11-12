@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
 
 export default function Header() {
   return (
     <div>
-      <div className="font-bold text-xl text-white text-center mt-4 mb-3">
+      <div className="font-bold text-4xl text-white text-center mt-4 mb-3">
         <span>
-          <h4>Brainrot Translator</h4>
+          <h4>
+            Brain<span className="text-purple-500">roter</span>
+          </h4>
         </span>
-        <p className="text-sm font-normal mt-2">
+        <p className="text-lg font-normal mt-2 font-sans">
           This program turns normal text into brain rot, write something!
         </p>
       </div>

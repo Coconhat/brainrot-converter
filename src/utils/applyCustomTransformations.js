@@ -49,7 +49,7 @@ const memeTerms = {
     "mrbeast ",
   ],
   status: ["alpha male", "mewwing", "winter arc", "MANGO"],
-  slang: ["edging streak", "bussing", "goated"],
+  slang: ["edging streak", "goated"],
   phrases: [
     "ambatukam",
     "hitting the griddy",
@@ -111,7 +111,7 @@ export const applyCustomTransformations = (word) => {
     return "huzz";
   }
   if (lowerWord === "to" || lowerWord === "is" || lowerWord === "a") {
-    return `${word}${Math.random() < 0.5 ? " bussin" : ""}`;
+    return `${word} ${Math.random() < 0.5 ? "skibidi" : ""}`;
   }
   if (demonstrativePronouns.includes(lowerWord)) {
     return `${word}${Math.random() < 0.5 ? " goofy" : ""}`;
