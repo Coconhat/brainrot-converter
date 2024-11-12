@@ -139,7 +139,6 @@ const BrainrotTranslator = () => {
     "deadass",
     "fr",
     "you feel me?",
-    "lowkey",
     "low diff",
     "high diff",
     "skidibi toilet",
