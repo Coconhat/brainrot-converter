@@ -39,6 +39,7 @@ const BrainrotTranslator = () => {
       "hitting the griddy",
       "the ocky way",
       "no edging",
+      "no no diddy",
       "hawk TUAH!",
       "let him cook",
     ],
@@ -57,26 +58,85 @@ const BrainrotTranslator = () => {
 
   const suffixes = ["deadass", "bussin", "fr", "krazy", "in still water"];
 
+  const phrasesToTransform = {
+    "give up": "put the fries in the bag",
+    "how are you": "how the rizz are you",
+    "good morning": "good morning the weather outside is rizzy",
+    "let's go": "let's roll out",
+    "what's up": "what's good",
+    "see you later": "catch you on the skibidi side",
+    "take care": "stay gigachad bro",
+    "thank you": "",
+    "how are you?": "how the rizz are you?",
+    "how are you": "how the rizz are you",
+    "no problem": "lowkey no diff",
+    "are you free": "are you skibidi free",
+    "im tired": "im feeling mango",
+    "i'm tired": "im feeling mango",
+    "I love you": `${Math.random() < 0.5 ? "i skibidi you" : ""}`,
+    "see you soon": "catch you in the riz zone",
+    "i'm hungry": "i need giga sustenance",
+    "good night": "stay rizzy, sleep tight",
+    "what's new": "what's rizzy in the skibidi world",
+    "long time no see": "been a sec since we rizlocked",
+    "nice to meet you": "pleasure to catch the rizz with you",
+    sorry: "major diff, my bad bro",
+    "excuse me": "rizz me a sec",
+    "i miss you": "feelin' the skibidi void",
+    "that's funny": "lowkey mad rizz there",
+    "thats funny": "lowkey mad rizz there",
+    congratulations: "mad rizzy props, you gigachad",
+    "you're welcome": "stay rizzy, no problem",
+    please: "giga plz",
+    pls: "giga plz",
+    "how much is this": "what's the giga price on this",
+    "what do you think": "what's the skibidi take on this",
+    "i don’t know": "no rizz clue bro",
+    idk: "no rizz clue bro",
+    "i dunno": "no rizz clue bro",
+    "i dont know": "no rizz clue bro",
+    "what's wrong": "what's the giga issue?",
+    goodbye: "skibidi out, my dude",
+    "i don't understand": "the skibidi ain't making sense",
+    "be careful": "riz it up but watch out",
+    "i need help": "need giga backup",
+    "i don’t feel well": "feelin' skibidi off",
+    "i dont feel well": "feelin' skibidi off",
+    "let's eat": "time to gigachow",
+    "lets eat": "time to gigachow",
+    "what's your name": "who's the skibidi legend here",
+    "whats your name": "who's the skibidi legend here",
+    "can you help me": "need a rizz hand here",
+    "nice job": "solid giga move",
+    "take a break": "time for a rizz recharge",
+    "are you busy": "you rizzy occupied?",
+    "let’s hang out": "let's giga vibe",
+    "this is cool": "mad skibidi rizz here",
+    "it's amazing": "full gigachad level",
+    "its amazing": "full gigachad level",
+    "what happened": "what's the rizz sitch",
+    "have a nice day": "keep it skibidi awesome",
+    "sorry for being late": "lowkey sorry for the L",
+    "good morning": "good morning the weather outside is rizzy",
+    "good afternoon": "good afternoon the weather outside is rizzy",
+    "good evening": "good evening the weather outside is rizzy",
+  };
+
+  const transformPhrases = (text) => {
+    for (const [phrase, transformation] of Object.entries(phrasesToTransform)) {
+      text = text.replace(
+        new RegExp(`\\b${phrase}\\b`, "gi"),
+        `<<${transformation}>>`
+      );
+    }
+    return text;
+  };
+
   const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
 
-    if (
-      (word === "give" && nextWord === "up") ||
-      (word === "let" && nextWord === "go")
-    ) {
-      return "put the fries in the bag";
-    }
-
-    if (word === "how" && nextWord === "are") {
-      return "how the rizz";
-    }
-    if (
-      word === "good" &&
-      (nextWord === "morning" ||
-        nextWord === "afternoon" ||
-        nextWord === "evening")
-    ) {
-      return "good morning the weather outside is rizzy";
+    if (word.startsWith("<<") && word.endsWith(">>")) {
+      return word.slice(2, -2);
     }
 
     if (memeTerms.prepositions.includes(word)) {
@@ -118,11 +178,16 @@ const BrainrotTranslator = () => {
     return word;
   };
 
+  const removeTags = (text) => {
+    return text.replace(/<<|>>/g, "");
+  };
+
   const translateToBrainrot = (text) => {
+    text = transformPhrases(text);
+
     let words = text.split(" ");
     let lastTransformedWord = "";
 
-    // Transform each word
     const transformed = words.map((word, index) => {
       const nextWord = words[index + 1];
       const transformedWord = transformWords(
@@ -143,12 +208,14 @@ const BrainrotTranslator = () => {
       transformed.push(randomPhrase);
     }
 
-    return `${randomFirstWord} ${transformed.join(" ")}`;
+    const result = `${randomFirstWord} ${transformed.join(" ")}`;
+    return removeTags(result);
   };
 
   const handleTranslate = () => {
     setOutput(translateToBrainrot(input));
   };
+
   function randomizeSentence() {
     for (let i = sentences.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));

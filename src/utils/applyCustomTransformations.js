@@ -85,7 +85,7 @@ export const applyCustomTransformations = (word) => {
     return "roll out";
   }
   if (lowerWord === "good" || lowerWord === "happy") {
-    return "bussin";
+    return "W";
   }
   if (
     lowerWord === "party" ||
