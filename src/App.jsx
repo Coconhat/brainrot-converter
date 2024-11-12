@@ -35,11 +35,11 @@ const BrainrotTranslator = () => {
     status: ["mewwing", "winter arc", "MANGO"],
     slang: ["edging streak"],
     phrases: [
-      "ambatukam",
+      "ambatukam!!!",
       "hitting the griddy",
-      "the ocky way",
+      "the ocky way!",
       "no edging",
-      "no no diddy",
+      "no no diddy!",
       "hawk TUAH!",
       "let him cook",
     ],
@@ -56,17 +56,16 @@ const BrainrotTranslator = () => {
     ],
   };
 
-  const suffixes = ["rizzy"];
+  const suffixes = ["rizzy", "skibidi"];
 
   const phrasesToTransform = {
     "give up": "put the fries in the bag",
     "how are you": "how the rizz are you",
     "good morning": "good morning the weather outside is rizzy",
     "let's go": "let's roll out",
-    "what's up": "what's good",
+    "what's up": "sigma up",
     "see you later": "catch you on the skibidi side",
     "take care": "stay gigachad",
-    "thank you": "",
     "how are you?": "how the rizz are you?",
     "how are you": "how the rizz are you",
     "no problem": "lowkey no diff",
@@ -95,7 +94,8 @@ const BrainrotTranslator = () => {
     idk: "no rizz clue bro",
     "i dunno": "no rizz clue bro",
     "i dont know": "no rizz clue bro",
-    "what's wrong": "what's the giga issue?",
+    "what's wrong": "what's the giga issue",
+    "whats wrong": "what's the giga issue",
     goodbye: "skibidi out, my dude",
     "i don't understand": "the skibidi ain't making sense",
     "be careful": "riz it up but watch out",
@@ -114,12 +114,12 @@ const BrainrotTranslator = () => {
     "this is cool": "mad skibidi rizz here",
     "it's amazing": "full gigachad level",
     "its amazing": "full gigachad level",
-    "what happened": "what's the rizz sitch",
+    "what happened": "what's the rizz",
     "have a nice day": "keep it skibidi awesome",
     "sorry for being late": "lowkey sorry for the L",
     "good morning": "good morning the weather outside is rizzy",
-    "good afternoon": "good afternoon the weather outside is rizzy",
-    "good evening": "good evening the weather outside is rizzy",
+    "good afternoon": "the weather outside is rizzy",
+    "good evening": "the weather outside is rizzy",
     "what the": "what the sigma",
     what: `${Math.random() < 0.3 ? "what the sigma" : ""}`,
   };
@@ -140,8 +140,7 @@ const BrainrotTranslator = () => {
     "fr",
     "you feel me?",
     "low diff",
-    "high diff",
-    "skidibi toilet",
+    "level 9",
   ];
 
   const transformWords = (word, lastTransformedWord) => {
@@ -152,7 +151,7 @@ const BrainrotTranslator = () => {
     }
 
     if (memeTerms.prepositions.includes(word)) {
-      return `${word} ${Math.random() < 0.5 ? "diddy" : ""}`;
+      return `${word} ${Math.random() < 0.4 ? "diddy" : ""}`;
     }
 
     if (/[.!?]$/.test(word)) {
@@ -194,7 +193,7 @@ const BrainrotTranslator = () => {
   };
 
   const applyRandomSuffix = (word) => {
-    if (Math.random() < 0.05) {
+    if (Math.random() < 0.03) {
       return `${word} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`;
     }
     return word;
@@ -209,20 +208,21 @@ const BrainrotTranslator = () => {
 
     let words = text.split(" ");
     let lastTransformedWord = "";
+    let usedWords = new Set();
 
     const transformed = words.map((word, index) => {
       const nextWord = words[index + 1];
-      const transformedWord = transformWords(
-        word,
-        nextWord,
-        lastTransformedWord
-      );
+      let transformedWord = transformWords(word, nextWord, lastTransformedWord);
       lastTransformedWord = transformedWord;
+
+      // Ensure the word hasn't been used already
+      while (usedWords.has(transformedWord)) {
+        transformedWord = transformWords(word, nextWord, lastTransformedWord);
+      }
+
+      usedWords.add(transformedWord);
       return transformedWord;
     });
-
-    const randomFirstWord =
-      firstWord[Math.floor(Math.random() * firstWord.length)];
 
     if (Math.random() < 0.29) {
       const randomPhrase =
@@ -230,7 +230,7 @@ const BrainrotTranslator = () => {
       transformed.push(randomPhrase);
     }
 
-    const result = `${randomFirstWord} ${transformed.join(" ")}`;
+    const result = `${transformed.join(" ")}`;
     return removeTags(result);
   };
 
