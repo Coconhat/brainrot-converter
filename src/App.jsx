@@ -178,7 +178,7 @@ const BrainrotTranslator = () => {
   };
 
   const applyMemeTermReplacements = (word) => {
-    if (Math.random() < 0.02) {
+    if (Math.random() < 0.025) {
       let category;
       do {
         category =

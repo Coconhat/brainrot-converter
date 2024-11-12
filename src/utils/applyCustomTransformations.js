@@ -23,6 +23,9 @@ import {
   strong,
   like,
   toBeVerbs,
+  angry,
+  drinks,
+  motivation,
 } from "../data/synonyms";
 const memeTerms = {
   good: [
@@ -183,6 +186,15 @@ export const applyCustomTransformations = (word) => {
       : Math.random() < 0.5
       ? "edging"
       : "";
+  }
+  if (angry.includes(word)) {
+    return "balkan rage";
+  }
+  if (drinks.includes(word)) {
+    return "still water";
+  }
+  if (motivation.includes(word)) {
+    return "winter arc";
   }
 
   return word;
