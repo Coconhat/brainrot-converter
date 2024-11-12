@@ -160,7 +160,7 @@ export const applyCustomTransformations = (word) => {
     return "edge";
   }
   if (winW.includes(word)) {
-    return "W";
+    return `${Math.random() < 0.5 ? "W" : "goated"}`;
   }
   if (lLose.includes(word)) {
     return "L";

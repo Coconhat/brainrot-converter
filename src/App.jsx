@@ -16,7 +16,7 @@ const BrainrotTranslator = () => {
       "skibidi",
       "gyatt",
       "rizz",
-      "only in ohio",
+      "ohio",
       "hawk TUAH!",
       "edge",
       "mog",
@@ -32,8 +32,8 @@ const BrainrotTranslator = () => {
       "john pork",
       "mrbeast ",
     ],
-    status: ["alpha male", "mewwing", "winter arc", "MANGO"],
-    slang: ["edging streak", "bussing", "goated"],
+    status: ["mewwing", "winter arc", "MANGO"],
+    slang: ["edging streak", "goated"],
     phrases: [
       "ambatukam",
       "hitting the griddy",
@@ -56,7 +56,7 @@ const BrainrotTranslator = () => {
     ],
   };
 
-  const suffixes = ["deadass", "bussin", "fr", "krazy", "in still water"];
+  const suffixes = ["deadass", "krazy", "in still water"];
 
   const phrasesToTransform = {
     "give up": "put the fries in the bag",
@@ -134,6 +134,17 @@ const BrainrotTranslator = () => {
     return text;
   };
 
+  const punctuationPhrases = [
+    "no cap",
+    "deadass",
+    "fr",
+    "you feel me?",
+    "lowkey",
+    "low diff",
+    "high diff",
+    "skidibi toilet",
+  ];
+
   const transformWords = (word, nextWord, lastTransformedWord) => {
     word = word.toLowerCase();
 
@@ -143,6 +154,16 @@ const BrainrotTranslator = () => {
 
     if (memeTerms.prepositions.includes(word)) {
       return `${word} ${Math.random() < 0.5 ? "diddy" : ""}`;
+    }
+
+    if (/[.!?]$/.test(word)) {
+      word += ` ${
+        Math.random() < 0.5
+          ? punctuationPhrases[
+              Math.floor(Math.random() * punctuationPhrases.length)
+            ]
+          : ""
+      }`;
     }
 
     word = applyCustomTransformations(word);
