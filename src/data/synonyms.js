@@ -261,6 +261,7 @@ export const winW = [
 ];
 
 export const lLose = [
+  "useless",
   "disastrous",
   "terrible",
   "horrible",

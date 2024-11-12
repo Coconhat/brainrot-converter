@@ -49,7 +49,7 @@ const memeTerms = {
     "mrbeast ",
   ],
   status: ["alpha male", "mewwing", "winter arc", "MANGO"],
-  slang: ["edging streak", "goated"],
+  slang: ["edging streak", "goated", "drippy"],
   phrases: [
     "ambatukam",
     "hitting the griddy",
@@ -57,6 +57,7 @@ const memeTerms = {
     "no edging",
     "hawk TUAH!",
     "let him cook",
+    "I like my cheese drippy bruh",
   ],
 };
 export const applyCustomTransformations = (word) => {
@@ -110,11 +111,18 @@ export const applyCustomTransformations = (word) => {
   ) {
     return "huzz";
   }
-  if (lowerWord === "to" || lowerWord === "is" || lowerWord === "a") {
-    return `${word} ${Math.random() < 0.5 ? "skibidi" : ""}`;
+  if (
+    lowerWord === "to" ||
+    lowerWord === "is" ||
+    lowerWord === "a" ||
+    lowerWord === "so"
+  ) {
+    return `${word} ${Math.random() < 0.32 ? "skibidi" : ""}`;
   }
   if (demonstrativePronouns.includes(lowerWord)) {
-    return `${word}${Math.random() < 0.5 ? " goofy" : ""}`;
+    return `${word}${
+      Math.random() < 0.4 ? " goofy" : Math.random() < 0.2 ? " skibidi" : ""
+    }`;
   }
 
   if (cap.includes(lowerWord)) {
@@ -161,7 +169,7 @@ export const applyCustomTransformations = (word) => {
     return "level-up";
   }
   if (food.includes(word)) {
-    return "balkan breakfast";
+    return `${Math.random() < 0.5 ? "balkan breakfast" : "lunchly"}`;
   }
   if (play.includes(word)) {
     return "edge";
@@ -185,15 +193,13 @@ export const applyCustomTransformations = (word) => {
     return "gyatt";
   }
   if (toBeVerbs.includes(word)) {
-    return `${
+    return `${word}${
       Math.random() < 0.2
-        ? "edging"
-        : Math.random() < 0.4
-        ? "bussin"
-        : Math.random() < 0.6
-        ? "low key"
-        : Math.random() < 0.8
-        ? "no cap"
+        ? " edging"
+        : Math.random() < 0.125
+        ? " skibidi"
+        : Math.random() < 0.4286
+        ? " low key"
         : ""
     }`;
   }

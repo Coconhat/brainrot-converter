@@ -15,7 +15,7 @@ const Footer = () => {
             className="text-white/70 hover:text-white transition-colors"
             aria-label="Instagram"
           >
-            <Instagram size={20} />
+            <Instagram size={30} />
           </a>
           <a
             href="https://github.com/coconhat"
@@ -24,7 +24,7 @@ const Footer = () => {
             className="text-white/70 hover:text-white transition-colors"
             aria-label="GitHub"
           >
-            <Github size={20} />
+            <Github size={30} />
           </a>
         </div>
         <div className="flex items-center text-white/70 text-sm">
@@ -45,7 +45,7 @@ const Footer = () => {
       <div className="absolute bottom-2 right-4">
         <div className="relative">
           <HelpCircle
-            size={20}
+            size={28}
             className="text-white/70 hover:text-white cursor-help transition-colors"
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}

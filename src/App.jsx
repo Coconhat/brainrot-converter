@@ -33,7 +33,7 @@ const BrainrotTranslator = () => {
       "mrbeast ",
     ],
     status: ["mewwing", "winter arc", "MANGO"],
-    slang: ["edging streak", "goated"],
+    slang: ["edging streak"],
     phrases: [
       "ambatukam",
       "hitting the griddy",
@@ -56,7 +56,7 @@ const BrainrotTranslator = () => {
     ],
   };
 
-  const suffixes = ["deadass", "krazy", "in still water"];
+  const suffixes = ["rizzy"];
 
   const phrasesToTransform = {
     "give up": "put the fries in the bag",
@@ -65,7 +65,7 @@ const BrainrotTranslator = () => {
     "let's go": "let's roll out",
     "what's up": "what's good",
     "see you later": "catch you on the skibidi side",
-    "take care": "stay gigachad bro",
+    "take care": "stay gigachad",
     "thank you": "",
     "how are you?": "how the rizz are you?",
     "how are you": "how the rizz are you",
@@ -75,7 +75,7 @@ const BrainrotTranslator = () => {
     "i'm tired": "im feeling mango",
     "I love you": `${Math.random() < 0.5 ? "i skibidi you" : ""}`,
     "see you soon": "catch you in the riz zone",
-    "i'm hungry": "i need giga sustenance",
+    "i'm hungry": "i need my balkan drippy cheese",
     "good night": "stay rizzy, sleep tight",
     "what's new": "what's rizzy in the skibidi world",
     "long time no see": "been a sec since we rizlocked",
@@ -194,7 +194,7 @@ const BrainrotTranslator = () => {
   };
 
   const applyRandomSuffix = (word) => {
-    if (Math.random() < 0.1) {
+    if (Math.random() < 0.05) {
       return `${word} ${suffixes[Math.floor(Math.random() * suffixes.length)]}`;
     }
     return word;
