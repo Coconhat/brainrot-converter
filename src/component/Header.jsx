@@ -6,7 +6,7 @@ export default function Header() {
       <div className="font-bold text-4xl text-white text-center mt-4 mb-3">
         <span>
           <h4>
-            Brain<span className="text-purple-500">roter</span>
+            Brain<span className="text-purple-500">rotter</span>
           </h4>
         </span>
         <p className="text-lg font-normal mt-2 font-sans">
