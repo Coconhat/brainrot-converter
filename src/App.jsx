@@ -73,6 +73,7 @@ const BrainrotTranslator = () => {
     "I love you": `${Math.random() < 0.5 ? "i skibidi you" : ""}`,
     "see you soon": "catch you in the riz zone",
     "i'm hungry": "i need my balkan drippy cheese",
+    "i'm so hungry": "i need my balkan drippy cheese",
     "good night": "stay rizzy, sleep tight",
     "what's new": "what's rizzy in the skibidi world",
     "long time no see": "been a sec since we rizlocked",

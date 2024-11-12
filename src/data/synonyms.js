@@ -621,6 +621,7 @@ export const levelUp = [
 ];
 
 export const food = [
+  "hungry",
   "lunch",
   "dinner",
   "breakfast",
