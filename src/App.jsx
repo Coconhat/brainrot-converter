@@ -288,7 +288,7 @@ const BrainrotTranslator = () => {
           </button>
         </div>
 
-        <div className="space-y-2 mt-4">
+        <div className="space-y-2 mt-4 sm:mb-4">
           <div className="font-medium text-white">Brainrot Version:</div>
           <div className="w-full min-h-32 p-4 border-2 border-white/30 rounded-lg bg-black text-white whitespace-pre-wrap">
             {output}

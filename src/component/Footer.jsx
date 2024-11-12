@@ -5,7 +5,7 @@ const Footer = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <footer className="w-full py-4 px-6 mt-auto relative">
+    <footer className="w-full py-4 sm:py-2 px-6 mt-auto relative">
       <div className="flex flex-col items-center justify-center space-y-3">
         <div className="flex items-center space-x-4">
           <a
