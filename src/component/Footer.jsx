@@ -5,8 +5,8 @@ const Footer = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <footer className="w-full py-4 sm:py-2 px-6 mt-auto relative">
-      <div className="flex flex-col items-center justify-center space-y-3">
+    <footer className="w-full py-2 px-6 mt-2 relative">
+      <div className="flex flex-col items-center justify-center space-y-2">
         <div className="flex items-center space-x-4">
           <a
             href="https://instagram.com/coconhat_"
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-4">
+      <div className="absolute bottom-2 right-4">
         <div className="relative">
           <HelpCircle
             size={20}
