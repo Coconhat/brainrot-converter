@@ -178,9 +178,11 @@ export const applyCustomTransformations = (word) => {
     return "gyatt";
   }
   if (toBeVerbs.includes(word)) {
-    const suffix =
-      Math.random() < 0.33 ? "on god" : Math.random() < 0.5 ? "edging" : "";
-    return `${word}${suffix ? " " + suffix : ""}`;
+    return Math.random() < 0.33
+      ? "on god"
+      : Math.random() < 0.5
+      ? "edging"
+      : "";
   }
 
   return word;

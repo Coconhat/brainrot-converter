@@ -79,8 +79,8 @@ const BrainrotTranslator = () => {
       return "good morning the weather outside is rizzy";
     }
 
-    if (memeTerms.prepositions.includes(word) && nextWord) {
-      return `${word} ${nextWord} ${Math.random() < 0.5 ? " kai cenat" : ""}`;
+    if (memeTerms.prepositions.includes(word)) {
+      return `${word} ${Math.random() < 0.5 ? "diddy" : ""}`;
     }
 
     word = applyCustomTransformations(word);

@@ -22,7 +22,17 @@ export const firstWord = [
   "g",
   "mate",
   "captain sigma",
+  "chief",
+  "pal",
+  "bestie",
+  "squad",
+  "gang",
+  "babe",
+  "queen",
+  "king",
+  "legend",
 ];
+
 export const toBeVerbs = [
   "is",
   "are",
@@ -41,7 +51,12 @@ export const toBeVerbs = [
   "can be",
   "could be",
   "must be",
-  "the"
+  "the",
+  "seems",
+  "appears",
+  "feels",
+  "looks",
+  "sounds",
 ];
 
 export const bad = [
@@ -78,7 +93,6 @@ export const bad = [
   "nasty",
   "disastrous",
   "woeful",
-  "disastrous",
   "crummy",
   "weak",
   "poorly executed",
@@ -92,6 +106,9 @@ export const bad = [
   "ghastly",
   "unfit",
   "unacceptable",
+  "trash",
+  "garbage",
+  "flop",
 ];
 
 export const looksmaxing = [
@@ -127,7 +144,6 @@ export const looksmaxing = [
   "glamorous",
   "elevated",
   "classy",
-  "handsome",
   "model-like",
   "ravishing",
   "sparkling",
@@ -135,19 +151,20 @@ export const looksmaxing = [
   "sultry",
   "magnetic",
   "fabulous",
-  "mesmerizing",
   "heavenly",
   "picture-perfect",
   "delightful",
   "polished",
   "stylish",
   "debonair",
-  "magnetic",
   "radiant",
   "captivating",
   "chic",
   "fierce",
+  "goddess",
+  "stunner",
 ];
+
 export const sigma = [
   "alpha",
   "lone wolf",
@@ -198,7 +215,10 @@ export const sigma = [
   "calculating",
   "unwavering",
   "outspoken",
+  "go-getter",
+  "trailblazer",
 ];
+
 export const winW = [
   "delicious",
   "amazing",
@@ -234,7 +254,13 @@ export const winW = [
   "finest",
   "prized",
   "dearest",
+  "lit",
+  "fire",
+  "dope",
+  "sick",
+  "epic",
 ];
+
 export const lLose = [
   "disastrous",
   "terrible",
@@ -251,12 +277,14 @@ export const lLose = [
   "regretful",
   "negative",
   "frustrating",
-  "devastating",
   "unlucky",
   "unpleasant",
-  "disastrous",
   "hopeless",
+  "cringe",
+  "fail",
+  "flop",
 ];
+
 export const opp = [
   "rival",
   "foe",
@@ -267,6 +295,9 @@ export const opp = [
   "antagonist",
   "hater",
   "bully",
+  "adversary",
+  "challenger",
+  "detractor",
 ];
 
 export const fanumTax = [
@@ -292,28 +323,26 @@ export const fanumTax = [
   "pocket",
   "filch",
   "raid",
-  "raid",
   "pinch",
   "deceive",
   "misappropriate",
   "embezzle",
   "defraud",
   "grift",
-  "scam",
   "underhand",
   "prey",
   "scrounge",
   "pluck",
-  "swindle",
   "hook",
   "robbery",
   "sham",
-  "crack",
   "trick",
   "siphon",
   "sketchy",
   "shifty",
+  "take from",
 ];
+
 export const sus = [
   "sketchy",
   "suspect",
@@ -340,10 +369,12 @@ export const sus = [
   "shifty",
   "unreliable",
   "dangerous",
-  "creepy",
   "freaky",
   "awkward",
+  "sus",
+  "low-key",
 ];
+
 export const negativeAura = [
   "lame",
   "cringe",
@@ -365,7 +396,10 @@ export const negativeAura = [
   "terrible",
   "unimpressive",
   "worse",
+  "bad vibes",
+  "negative energy",
 ];
+
 export const wAura = [
   "vibes",
   "energy",
@@ -382,14 +416,16 @@ export const wAura = [
   "mood",
   "confidence",
   "aura",
-  "swagger",
   "radiance",
   "smoothness",
   "flair",
   "shine",
   "fire",
   "delicious",
+  "good vibes",
+  "lit",
 ];
+
 export const beta = [
   "soft",
   "lame",
@@ -408,14 +444,13 @@ export const beta = [
   "noob",
   "clown",
   "squishy",
-  "simper",
-  "weakling",
-  "beta male",
   "simp",
+  "beta male",
   "trash",
-  "beta energy",
   "low tier",
+  "beta energy",
 ];
+
 export const cap = [
   "lie",
   "fraud",
@@ -453,26 +488,16 @@ export const cap = [
   "sleazy",
   "dodgy",
   "mendacity",
-  "whitely",
   "stretching",
   "overblowing",
-  "skewed",
   "overhyping",
   "spin",
   "overstating",
   "alternative",
   "bunk",
-  "sham",
-  "tall",
-  "trick",
-  "cloaking",
-  "underhanded",
-  "conning",
-  "misleadingly",
-  "sly",
-  "deflecting",
-  "misstating",
+  "tall tale",
 ];
+
 export const yap = [
   "chat",
   "speak",
@@ -503,7 +528,10 @@ export const yap = [
   "convey",
   "utter",
   "announce",
+  "spill the tea",
+  "shoot the breeze",
 ];
+
 export const demonstrativePronouns = [
   "this",
   "that",
@@ -511,7 +539,9 @@ export const demonstrativePronouns = [
   "those",
   "here",
   "there",
+  "yonder",
 ];
+
 export const giveUp = [
   "quit",
   "yield",
@@ -521,7 +551,10 @@ export const giveUp = [
   "abandon",
   "cede",
   "relinquish",
+  "throw in the towel",
+  "give in",
 ];
+
 export const dumb = [
   "dumb",
   "slow",
@@ -543,7 +576,10 @@ export const dumb = [
   "bozo",
   "brainlet",
   "bonehead",
+  "dunce",
+  "knucklehead",
 ];
+
 export const indefinitePronouns = [
   "everyone",
   "everybody",
@@ -555,7 +591,10 @@ export const indefinitePronouns = [
   "everything",
   "something",
   "anything",
+  "whoever",
+  "whomever",
 ];
+
 export const levelUp = [
   "transform",
   "morph",
@@ -578,7 +617,9 @@ export const levelUp = [
   "switch",
   "enhance",
   "amplify",
+  "level up",
 ];
+
 export const food = [
   "lunch",
   "dinner",
@@ -588,7 +629,13 @@ export const food = [
   "meals",
   "treats",
   "bite",
+  "grub",
+  "chow",
+  "nosh",
+  "munch",
+  "feast",
 ];
+
 export const play = [
   "play",
   "game",
@@ -598,7 +645,11 @@ export const play = [
   "enjoy",
   "participate",
   "recreate",
+  "have fun",
+  "mess around",
+  "chill",
 ];
+
 export const big = [
   "big",
   "large",
@@ -611,7 +662,11 @@ export const big = [
   "vast",
   "tremendous",
   "giant",
+  "monstrous",
+  "whopping",
+  "massive",
 ];
+
 export const strong = [
   "strong",
   "powerful",
@@ -621,6 +676,11 @@ export const strong = [
   "athletic",
   "buff",
   "mighty",
+  "robust",
+  "formidable",
+  "resilient",
+  "hardy",
+  "potent",
 ];
 export const like = [
   "liked",
@@ -632,4 +692,8 @@ export const like = [
   "approve",
   "adore",
   "cherish",
+  "favor",
+  "dig",
+  "vibe with",
+  "fancy",
 ];
