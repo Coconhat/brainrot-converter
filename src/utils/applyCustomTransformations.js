@@ -62,6 +62,10 @@ const memeTerms = {
 export const applyCustomTransformations = (word) => {
   const lowerWord = word.toLowerCase();
 
+  if (lowerWord === "drink") {
+    return `${word} ${Math.random() < 0.5 ? "still water" : ""}`;
+  }
+
   if (lowerWord === "no") {
     return `${word} ${Math.random() < 0.5 ? "naw" : "naur"}`;
   }
@@ -181,11 +185,17 @@ export const applyCustomTransformations = (word) => {
     return "gyatt";
   }
   if (toBeVerbs.includes(word)) {
-    return Math.random() < 0.33
-      ? "on god"
-      : Math.random() < 0.5
-      ? "edging"
-      : "";
+    return `${
+      Math.random() < 0.2
+        ? "edging"
+        : Math.random() < 0.4
+        ? "bussin"
+        : Math.random() < 0.6
+        ? "low key"
+        : Math.random() < 0.8
+        ? "no cap"
+        : ""
+    }`;
   }
   if (angry.includes(word)) {
     return "balkan rage";

@@ -38,7 +38,6 @@ export const toBeVerbs = [
   "are",
   "was",
   "were",
-  "am",
   "be",
   "been",
   "being",
@@ -651,6 +650,7 @@ export const play = [
 ];
 
 export const big = [
+  "fat",
   "big",
   "large",
   "huge",
@@ -792,6 +792,7 @@ export const angry = [
   "livid",
   "boiling",
   "heated",
+  "rage",
   "wrathful",
   "raging",
   "hot-headed",

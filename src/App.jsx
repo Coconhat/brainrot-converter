@@ -145,7 +145,7 @@ const BrainrotTranslator = () => {
     "skidibi toilet",
   ];
 
-  const transformWords = (word, nextWord, lastTransformedWord) => {
+  const transformWords = (word, lastTransformedWord) => {
     word = word.toLowerCase();
 
     if (word.startsWith("<<") && word.endsWith(">>")) {
